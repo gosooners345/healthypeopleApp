@@ -12,7 +12,8 @@ Functions:
  
  User Stories:
  Employees:
-Doctor:As a Doctor, I should be able to access a patient's medical history and vital information
+Doctor:
+As a Doctor, I should be able to access a patient's medical history and vital information
 As a Doctor, I should be able to inform a patient of what medical conditions they may have and test for any infections.
 As a Doctor, I should be able to diagnose a patient with any medical condition based on the information in their record and based on tests I give the patient
 As a Doctor, I should be able to recommend to a patient what they should do to improve their health
