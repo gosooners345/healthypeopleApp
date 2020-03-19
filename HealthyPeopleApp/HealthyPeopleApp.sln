@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthyPeopleAppDesktopClient", "HealthyPeopleAppDesktopClient\HealthyPeopleAppDesktopClient.csproj", "{079B39DF-90A3-47AD-98C5-14BBCCE8167A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "healthyPeopleAndroidApp", "healthyPeopleAndroidApp\healthyPeopleAndroidApp.csproj", "{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthyPeopleDesktopClientPrototype", "HealthyPeopleDesktopClientPrototype\HealthyPeopleDesktopClientPrototype.csproj", "{33B3E7E3-7D94-4789-9EAE-3907108FBF91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{079B39DF-90A3-47AD-98C5-14BBCCE8167A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{079B39DF-90A3-47AD-98C5-14BBCCE8167A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{079B39DF-90A3-47AD-98C5-14BBCCE8167A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51CEB4A3-A0C6-4554-BDA7-BA18960C350D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{33B3E7E3-7D94-4789-9EAE-3907108FBF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B3E7E3-7D94-4789-9EAE-3907108FBF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B3E7E3-7D94-4789-9EAE-3907108FBF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B3E7E3-7D94-4789-9EAE-3907108FBF91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

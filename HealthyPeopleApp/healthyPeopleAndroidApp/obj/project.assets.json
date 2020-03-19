@@ -750,11 +750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brandon Guerin\\Desktop\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp.csproj",
+      "projectUniqueName": "C:\\Users\\Brandon Guerin\\source\\repos\\healthypeopleApp\\HealthyPeopleApp\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp.csproj",
       "projectName": "healthyPeopleAndroidApp",
-      "projectPath": "C:\\Users\\Brandon Guerin\\Desktop\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp.csproj",
+      "projectPath": "C:\\Users\\Brandon Guerin\\source\\repos\\healthypeopleApp\\HealthyPeopleApp\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp.csproj",
       "packagesPath": "C:\\Users\\Brandon Guerin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brandon Guerin\\Desktop\\healthyPeopleAndroidApp\\healthyPeopleAndroidApp\\obj\\",
+      "outputPath": "C:\\Users\\Brandon Guerin\\source\\repos\\healthypeopleApp\\HealthyPeopleApp\\healthyPeopleAndroidApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
