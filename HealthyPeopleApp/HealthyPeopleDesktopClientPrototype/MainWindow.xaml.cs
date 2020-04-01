@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Forms;
 using System.Windows.Shapes;
 
 namespace HealthyPeopleDesktopClientPrototype
@@ -22,7 +23,14 @@ namespace HealthyPeopleDesktopClientPrototype
     {
         public MainWindow()
         {
-            InitializeComponent();
+            LoginWindow loginWindow=new LoginWindow();
+            loginWindow.ShowDialog();
+            if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
+                InitializeComponent();
+            else
+                InitializeComponent(); 
         }
+
+      
     }
 }

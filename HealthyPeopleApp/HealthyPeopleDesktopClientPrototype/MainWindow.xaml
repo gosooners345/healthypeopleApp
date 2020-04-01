@@ -6,7 +6,32 @@
         xmlns:local="clr-namespace:HealthyPeopleDesktopClientPrototype"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="171*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="345" Margin="0,40,0,0" VerticalAlignment="Top" Width="792" RenderTransformOrigin="-0.15,0.45" Grid.ColumnSpan="3">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="157*"/>
+                        <ColumnDefinition Width="55*"/>
+                        <ColumnDefinition Width="574*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="190,55,0,0" TextWrapping="Wrap" Text="Patient Stuff" VerticalAlignment="Top" Height="91" Width="210"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <Label Content="Label" Height="100" Width="100"/>
+        </TabControl>
+        <StatusBar HorizontalAlignment="Left" Height="29" Margin="0,390,0,0" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="3"/>
+        <Label x:Name="patient" Content="Patient Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.184,0.038" Height="35"/>
+        <TextBox x:Name="patientNameTextBox" HorizontalAlignment="Left" Height="23" Margin="89,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="260,4,0,0" VerticalAlignment="Top" Width="75"  Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
