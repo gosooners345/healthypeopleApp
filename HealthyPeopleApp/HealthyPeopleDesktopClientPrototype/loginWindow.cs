@@ -12,14 +12,56 @@ namespace HealthyPeopleDesktopClientPrototype
 {
     public partial class LoginWindow : Form
     {
+        List<String> userIDList = new List<string>(), passwordList = new List<string>();
         public LoginWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Submits Login information to authenticate user to access system
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+        
+            string userName = userIDTxtBox.Text;
+            string password = employeePasswordTxtBox.Text;
+            // Check credentials to see if user is a valid entry
+            for (int i = 0; i < userIDList.Count; i++)
+
+                //If user exists
+            {if (userIDList.Contains(userName) && passwordList.Contains(password))
+                {
+                    //If userID and password are correct
+                    if (userName == userIDList[i] && password == passwordList[i])
+                    {
+                        // User is authenticated
+                        this.DialogResult = DialogResult.OK;  }
+                    else
+                    {
+                        //UserID or password mismatch
+                        MessageBox.Show("Password or User ID don't match known records");
+                    }
+                }
+                else
+                    MessageBox.Show("Password or User ID doesn't exist in our records");
+            }
+                
+           
+        }
+
+        private void LoginWindow_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_HealthyPeopleDB_TestDataSet.UserTable' table. You can move, or remove it, as needed.
+            this.userTableTableAdapter.Fill(this._HealthyPeopleDB_TestDataSet.UserTable);
+            for (int i = 0; i < this._HealthyPeopleDB_TestDataSet.UserTable.Rows.Count; i++)
+            { userIDList.Add(this._HealthyPeopleDB_TestDataSet.UserTable.Rows[i][0].ToString());
+                passwordList.Add(this._HealthyPeopleDB_TestDataSet.UserTable.Rows[i][1].ToString());
+            }
+           // MessageBox.Show(userIDList[0].ToString() + passwordList[0].ToString());
         }
     }
 }

@@ -33,5 +33,6 @@
         <Label x:Name="patient" Content="Patient Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.184,0.038" Height="35"/>
         <TextBox x:Name="patientNameTextBox" HorizontalAlignment="Left" Height="23" Margin="89,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
         <Button Content="Search" HorizontalAlignment="Left" Margin="260,4,0,0" VerticalAlignment="Top" Width="75"  Grid.ColumnSpan="2"/>
+        <Button x:Name="signOffButton" Content="Sign Off" Grid.Column="2" HorizontalAlignment="Left" Margin="257,7,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.4,0.05" Click="SignOffButton_Click"/>
     </Grid>
 </Window>

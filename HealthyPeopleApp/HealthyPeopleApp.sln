@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "healthyPeopleAndroidApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthyPeopleDesktopClientPrototype", "HealthyPeopleDesktopClientPrototype\HealthyPeopleDesktopClientPrototype.csproj", "{33B3E7E3-7D94-4789-9EAE-3907108FBF91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA0BD6C6-BC0C-4671-B424-A5E3746E0DA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

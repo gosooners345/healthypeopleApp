@@ -28,9 +28,18 @@ namespace HealthyPeopleDesktopClientPrototype
             if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
                 InitializeComponent();
             else
-                InitializeComponent(); 
+                System.Windows.Application.Current.Shutdown();
         }
 
-      
+        private void SignOffButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
+            if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
+                InitializeComponent();
+            else
+                System.Windows.Application.Current.Shutdown();
+        }
     }
 }
