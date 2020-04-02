@@ -30,16 +30,26 @@ namespace HealthyPeopleDesktopClientPrototype
             string userName = userIDTxtBox.Text;
             string password = employeePasswordTxtBox.Text;
             // Check credentials to see if user is a valid entry
-            for (int i = 0; i < userIDList.Count; i++)
+           
+            bool matchUserID = false, matchUserPassword = false;
+           
+           
 
-                //If user exists
-            {if (userIDList.Contains(userName) && passwordList.Contains(password))
+            if (passwordList.Contains(password)&&userIDList.Contains(userName))
                 {
-                    int matchID = (userIDList.BinarySearch(userName));
-                    int matchPassword = passwordList.BinarySearch(password);
-                   
-                    //If userID and password are correct
-                    if (matchID==1&&matchPassword==1)
+                  for(int i =0; i<userIDList.Count; i++)
+            {
+                    if (userName == userIDList[i] && password == passwordList[i])
+                    { matchUserID = true; matchUserPassword = true; }
+                    else if (userName == userIDList[i] && password != passwordList[i])
+                        continue;
+                    else
+                        continue;
+                        
+            }
+                  //If userID and password are correct
+                   if(matchUserID && matchUserPassword)
+                  
                     {
                         // User is authenticated
                         this.DialogResult = DialogResult.OK;  }
@@ -54,7 +64,7 @@ namespace HealthyPeopleDesktopClientPrototype
             }
                 
            
-        }
+        
 
         private void LoginWindow_Load(object sender, EventArgs e)
         {
