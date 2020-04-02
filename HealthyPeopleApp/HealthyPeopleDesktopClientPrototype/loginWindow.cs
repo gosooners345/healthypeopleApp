@@ -35,8 +35,11 @@ namespace HealthyPeopleDesktopClientPrototype
                 //If user exists
             {if (userIDList.Contains(userName) && passwordList.Contains(password))
                 {
+                    int matchID = (userIDList.BinarySearch(userName));
+                    int matchPassword = passwordList.BinarySearch(password);
+                   
                     //If userID and password are correct
-                    if (userName == userIDList[i] && password == passwordList[i])
+                    if (matchID==1&&matchPassword==1)
                     {
                         // User is authenticated
                         this.DialogResult = DialogResult.OK;  }
