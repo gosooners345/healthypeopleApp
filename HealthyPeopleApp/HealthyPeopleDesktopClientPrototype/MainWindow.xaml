@@ -21,18 +21,36 @@
                         <ColumnDefinition Width="55*"/>
                         <ColumnDefinition Width="574*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="190,55,0,0" TextWrapping="Wrap" Text="Patient Stuff" VerticalAlignment="Top" Height="91" Width="210"/>
+                    <Label x:Name="nameLbl" Content="Name:" Margin="27,40,86,0" VerticalAlignment="Top" RenderTransformOrigin="0.455,0.692"/>
+                    <Label x:Name="patientNameLabel" Content="Label" HorizontalAlignment="Left" Margin="98,40,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="104"/>
+                    <Label Content="Address:" HorizontalAlignment="Left" Margin="27,71,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="patientAddressLabel" Content="Label" HorizontalAlignment="Left" Margin="142,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.447,3.269" Grid.ColumnSpan="2"/>
+                    <Label Content="City:" HorizontalAlignment="Left" Margin="27,123,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="patientCityLabel" Content="Label" HorizontalAlignment="Left" Margin="142,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.895,5.385" Grid.ColumnSpan="2"/>
+                    <Label x:Name="patient_ID" Content="PatientID #:" HorizontalAlignment="Left" Margin="27,7,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="patientIDLabel" Content="Label" HorizontalAlignment="Left" Margin="141,7,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="45" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-1.578"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="TabItem" Height="22" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="healthRecGrid" HorizontalAlignment="Left" Height="297" Margin="-15,20,0,0" VerticalAlignment="Top" Width="472"/>
+                </Grid>
             </TabItem>
             <Label Content="Label" Height="100" Width="100"/>
         </TabControl>
         <StatusBar HorizontalAlignment="Left" Height="29" Margin="0,390,0,0" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="3"/>
         <Label x:Name="patient" Content="Patient Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.184,0.038" Height="35"/>
         <TextBox x:Name="patientNameTextBox" HorizontalAlignment="Left" Height="23" Margin="89,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="260,4,0,0" VerticalAlignment="Top" Width="75"  Grid.ColumnSpan="2"/>
+        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="260,4,0,0" VerticalAlignment="Top" Width="75"  Grid.ColumnSpan="2" Click="Button_Click"/>
         <Button x:Name="signOffButton" Content="Sign Off" Grid.Column="2" HorizontalAlignment="Left" Margin="257,7,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.4,0.05" Click="SignOffButton_Click"/>
     </Grid>
 </Window>

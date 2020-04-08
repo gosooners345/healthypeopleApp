@@ -29,11 +29,11 @@ namespace HealthyPeopleDesktopClientPrototype
         
             string userName = userIDTxtBox.Text;
             string password = employeePasswordTxtBox.Text;
+           
             // Check credentials to see if user is a valid entry
            
             bool matchUserID = false, matchUserPassword = false;
-           
-           
+
 
             if (passwordList.Contains(password)&&userIDList.Contains(userName))
                 {
@@ -59,12 +59,13 @@ namespace HealthyPeopleDesktopClientPrototype
                         MessageBox.Show("Password or User ID don't match known records");
                     }
                 }
+            //UserName or Password doesn't exist
+
                 else
                     MessageBox.Show("Password or User ID doesn't exist in our records");
             }
-                
-           
-        
+
+      
 
         private void LoginWindow_Load(object sender, EventArgs e)
         {
