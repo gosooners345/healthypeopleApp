@@ -26,7 +26,7 @@ namespace HealthyPeopleDesktopClientPrototype
 
         }
 
-        private List<String> patient;
+        
         private void AddPatientUserForm_Load(object sender, EventArgs e)
         {
            
@@ -53,49 +53,35 @@ namespace HealthyPeopleDesktopClientPrototype
         
           
             // Adds new patient and user data to database
-
+            //User Data
             _HealthyPeopleDB_TestDataSet.PatientRow patientRow;
             _HealthyPeopleDB_TestDataSet.PatientUserTableRow userTableRow;
             userTableRow = this._HealthyPeopleDB_TestDataSet.PatientUserTable.NewPatientUserTableRow();
             patientRow = this._HealthyPeopleDB_TestDataSet.Patient.NewPatientRow();
-
-            patientRow.PatientName = patientNameTextBox.Text;//  patientRow.PatientName name
-            patientRow.PatientPhoneNumber = patientPhoneNumberTextBox.Text;//patientRow.PatientPhoneNumber phoneNum 
-            patientRow.PatientBirthDate = patientBirthDateDateTimePicker.Value;//patientRow.PatientBirthDate birthDate 
-            patientRow.PatientZip = patientZipTextBox.Text;//patientRow.PatientZip  zip 
-            patientRow.PatientCity  = patientCityTextBox.Text;//city
-            patientRow.EmailAddress = emailAddressTextBox.Text;//emailAddress 
+            patientRow.PatientName = patientNameTextBox.Text;
+            patientRow.PatientPhoneNumber = patientPhoneNumberTextBox.Text;
+            patientRow.PatientBirthDate = patientBirthDateDateTimePicker.Value;
+            patientRow.PatientZip = patientZipTextBox.Text;
+            patientRow.PatientCity  = patientCityTextBox.Text;
+            patientRow.EmailAddress = emailAddressTextBox.Text;
             patientRow.PatientState = patientStateTextBox.Text; //state
             patientRow.PatientAddress = patientAddressTextBox.Text;//address 
             patientRow.PatientUserID = patientUserIDTextBox1.Text;//userID 
              userTableRow.PatientUserID = patientUserIDTextBox1.Text;
             userTableRow.PatientPassword = patientPasswordTextBox.Text;
             
-
+            //Update Tables with new patient records
             try
             {
+                //Add and Update Records
                 this._HealthyPeopleDB_TestDataSet.PatientUserTable.Rows.Add(userTableRow);
                 this.patientUserTableTableAdapter1.Update(this._HealthyPeopleDB_TestDataSet.PatientUserTable);
-
-                bool isItHere = this._HealthyPeopleDB_TestDataSet.PatientUserTable.Contains(userTableRow);
-                if (isItHere)
-                    MessageBox.Show("It's Here!");
-                else
-                    MessageBox.Show("something's wrong");
                 this._HealthyPeopleDB_TestDataSet.Patient.Rows.Add(patientRow);
                 this.patientTableAdapter1.Update(this._HealthyPeopleDB_TestDataSet.Patient);
-                isItHere = this._HealthyPeopleDB_TestDataSet.Patient.Contains(patientRow);
-                if (isItHere)
-                    MessageBox.Show("It's Here!");
-                else
-                    MessageBox.Show("something's wrong");
-
-
-
                 MessageBox.Show("Data Saved");
-               // con.Close();
                 this.DialogResult = DialogResult.OK;
             }
+            //Catches an exception
             catch (Exception ex)
             {
 

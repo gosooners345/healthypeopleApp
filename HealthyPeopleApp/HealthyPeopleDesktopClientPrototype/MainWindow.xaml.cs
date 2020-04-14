@@ -25,7 +25,7 @@ namespace HealthyPeopleDesktopClientPrototype
     public partial class MainWindow : Window
     {
         private string conString = "HealthyPeopleDesktopClientPrototype.Properties.Settings.HealthyPeopleDB_TestConnectionString";
-
+        protected int patientIDRec;
         private string dbstring = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\HealthyPeopleDB-Test.accdb;Persist Security Info=True;";
             protected static List<String> patientInfo;// = new List<string>();
         public MainWindow()
@@ -42,7 +42,7 @@ namespace HealthyPeopleDesktopClientPrototype
             //    System.Windows.Application.Current.Shutdown();
             InitializeComponent();
             LoadGrid();
-            patientInfo = new List<string>();
+            
 
         }
 
@@ -135,7 +135,7 @@ namespace HealthyPeopleDesktopClientPrototype
                     emailAddressTextBox.Content = reader["EmailAddress"].ToString();
                     patientStateTextBox.Content = reader["PatientState"].ToString();
                     patientZipTextBox.Content = reader["PatientZip"].ToString();
-
+                    patientIDRec = Int32.Parse(patientIDTextBox.Content.ToString());
                 }
             }
             catch
@@ -161,14 +161,14 @@ namespace HealthyPeopleDesktopClientPrototype
                 }
                 else
                 {
-                    
+                    add.Dispose();
                 }
 
               
             }
-            catch
+            catch (Exception ex)
             {
-               
+                System.Windows.MessageBox.Show(ex.Message);
             }
         }
 
@@ -195,6 +195,26 @@ namespace HealthyPeopleDesktopClientPrototype
             employeeDetailsViewSource.View.MoveCurrentToFirst();
            
            
+        }
+
+        private void AddEvent_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                addPatientEventForm addEvent = new addPatientEventForm();
+                addEvent.patientID = patientIDRec;
+                addEvent.ShowDialog();
+                if(addEvent.DialogResult==System.Windows.Forms.DialogResult.OK)
+                {
+                    LoadGrid(patientIDRec);
+
+                }
+                else { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
         }
     }
 
