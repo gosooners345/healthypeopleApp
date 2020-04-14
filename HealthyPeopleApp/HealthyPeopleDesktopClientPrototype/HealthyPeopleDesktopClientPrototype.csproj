@@ -60,6 +60,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addPatientEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addPatientEventForm.Designer.cs">
+      <DependentUpon>addPatientEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addPatientUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addPatientUserForm.Designer.cs">
+      <DependentUpon>addPatientUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="_HealthyPeopleDB_TestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +110,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="addPatientEventForm.resx">
+      <DependentUpon>addPatientEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addPatientUserForm.resx">
+      <DependentUpon>addPatientUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginWindow.resx">
       <DependentUpon>loginWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,7 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HealthyPeopleDB-Test.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

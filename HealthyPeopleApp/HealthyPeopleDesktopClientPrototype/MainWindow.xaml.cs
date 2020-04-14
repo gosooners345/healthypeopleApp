@@ -24,20 +24,26 @@ namespace HealthyPeopleDesktopClientPrototype
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string conString ="HealthyPeopleDesktopClientPrototype.Properties.Settings.HealthyPeopleDB_TestConnectionString";
+        private string conString = "HealthyPeopleDesktopClientPrototype.Properties.Settings.HealthyPeopleDB_TestConnectionString";
+
+        private string dbstring = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\HealthyPeopleDB-Test.accdb;Persist Security Info=True;";
+            protected static List<String> patientInfo;// = new List<string>();
         public MainWindow()
         {
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.ShowDialog();
-            if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
-            {
-                InitializeComponent();
+            //LoginWindow loginWindow = new LoginWindow();
+            //loginWindow.ShowDialog();
+            //if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    InitializeComponent();
+            //    LoadGrid();
+            //    patientInfo = new List<string>();
+            //}
+            //else
+            //    System.Windows.Application.Current.Shutdown();
+            InitializeComponent();
+            LoadGrid();
+            patientInfo = new List<string>();
 
-            }
-            else
-                System.Windows.Application.Current.Shutdown();
-
-           // InitializeComponent();
         }
 
         private void SignOffButton_Click(object sender, RoutedEventArgs e)
@@ -64,6 +70,7 @@ namespace HealthyPeopleDesktopClientPrototype
             command.CommandText = "select * from [PatientRecords]";
             command.Connection = con;
             OleDbDataReader reader = command.ExecuteReader();
+
             healthRecGrid.ItemsSource = reader;
            
 
@@ -94,7 +101,7 @@ namespace HealthyPeopleDesktopClientPrototype
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string searchBy = patientNameTextBox.Text;
+            string searchBy = searchPatientTextBox.Text;
             int searchID;
             OleDbConnection con = new OleDbConnection();
             con.ConnectionString = ConfigurationManager.ConnectionStrings[conString].ToString();
@@ -118,11 +125,17 @@ namespace HealthyPeopleDesktopClientPrototype
                     success = true;
                     searchID = Int32.Parse(reader["PatientID"].ToString());
                     LoadGrid(searchID);
-                    this.patientIDLabel.Content = searchID.ToString();
-                    this.patientNameLabel.Content = reader["PatientName"].ToString();
-                    patientAddressLabel.Content = reader["PatientAddress"].ToString();
-                    patientCityLabel.Content = reader["PatientCity"].ToString();
-                  
+                    this.patientIDTextBox.Content = searchID.ToString();
+                    this.patientNameTextBox1.Content = reader["PatientName"].ToString();
+                    patientAddressTextBox.Content = reader["PatientAddress"].ToString();
+                    patientCityTextBox.Content = reader["PatientCity"].ToString();
+                    patientUserIDTextBox.Content = reader["PatientUserID"].ToString();
+                    patientBirthDateDatePicker.SelectedDate = DateTime.Parse(reader["PatientBirthDate"].ToString());
+                    patientPhoneNumberTextBox.Content = reader["PatientPhoneNumber"].ToString();
+                    emailAddressTextBox.Content = reader["EmailAddress"].ToString();
+                    patientStateTextBox.Content = reader["PatientState"].ToString();
+                    patientZipTextBox.Content = reader["PatientZip"].ToString();
+
                 }
             }
             catch
@@ -135,5 +148,54 @@ namespace HealthyPeopleDesktopClientPrototype
             con.Close();
 
         }
+
+        private void AddPatientButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                addPatientUserForm add = new addPatientUserForm();
+                add.ShowDialog();
+                if (add.DialogResult == System.Windows.Forms.DialogResult.OK)
+                {
+                    LoadGrid();
+                }
+                else
+                {
+                    
+                }
+
+              
+            }
+            catch
+            {
+               
+            }
+        }
+
+        private void AddEventButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSet _HealthyPeopleDB_TestDataSet = ((HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSet)(this.FindResource("_HealthyPeopleDB_TestDataSet")));
+            // Load data into the table EmployeeDetails. You can modify this code as needed.
+            HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.EmployeeDetailsTableAdapter _HealthyPeopleDB_TestDataSetEmployeeDetailsTableAdapter = new HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.EmployeeDetailsTableAdapter();
+            _HealthyPeopleDB_TestDataSetEmployeeDetailsTableAdapter.Fill(_HealthyPeopleDB_TestDataSet.EmployeeDetails);
+            System.Windows.Data.CollectionViewSource employeeDetailsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("employeeDetailsViewSource")));
+            employeeDetailsViewSource.View.MoveCurrentToFirst();
+           
+           
+        }
     }
+
 }
