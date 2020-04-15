@@ -209,11 +209,11 @@ namespace HealthyPeopleDesktopClientPrototype
                     LoadGrid(patientIDRec);
 
                 }
-                else { }
+                else { addEvent.Dispose(); }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Source,ex.Message);
             }
         }
     }

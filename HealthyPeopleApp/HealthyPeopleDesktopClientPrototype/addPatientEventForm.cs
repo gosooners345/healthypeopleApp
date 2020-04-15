@@ -17,47 +17,42 @@ namespace HealthyPeopleDesktopClientPrototype
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Save health event record to patient's records
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             _HealthyPeopleDB_TestDataSet.PatientRecordsRow patientRecords;
             patientRecords = this._HealthyPeopleDB_TestDataSet.PatientRecords.NewPatientRecordsRow();
-            patientIDContent.Text = patientID.ToString();
-            patientRecords.PatientID = Int32.Parse(patientIDContent.ToString());
+            
+            patientRecords.PatientID = Int32.Parse(patientIDLabel1.Text);
             patientRecords.PatientEvent = patientEventTextBox.Text;
             patientRecords.PatientEventDate = patientEventDateDateTimePicker.Value.Date;
+            //Save an event to a patient's health record
             try {
+
                 this._HealthyPeopleDB_TestDataSet.PatientRecords.Rows.Add(patientRecords);
                 this.patientRecordsTableAdapter.Update(this._HealthyPeopleDB_TestDataSet.PatientRecords);
-                bool isItHere = this._HealthyPeopleDB_TestDataSet.PatientRecords.Contains(patientRecords);
-                if (isItHere)
-                    MessageBox.Show("It's Here!");
-                else
-                    MessageBox.Show("something's wrong");
+                
                 MessageBox.Show("Data Saved");
                 this.DialogResult = DialogResult.OK;
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Source, ex.Message);
             }
-            // _HealthyPeopleDB_TestDataSetTableAdapters.PatientRecordsTableAdapter patient = new _HealthyPeopleDB_TestDataSetTableAdapters.PatientRecordsTableAdapter();
 
         }
 
-        private void PatientRecordsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.patientRecordsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this._HealthyPeopleDB_TestDataSet);
-
-        }
-
+       
         private void AddPatientEventForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the '_HealthyPeopleDB_TestDataSet.PatientRecords' table. You can move, or remove it, as needed.
-            this.patientRecordsTableAdapter.Fill(this._HealthyPeopleDB_TestDataSet.PatientRecords);
-
+          
+            patientIDLabel1.Text = patientID.ToString();
         }
 
         private void PatientEventIDTextBox_TextChanged(object sender, EventArgs e)

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label patientEventIDLabel;
-            System.Windows.Forms.Label patientEventLabel;
+            System.Windows.Forms.Label patientEventIDLabel1;
+            System.Windows.Forms.Label patientEventLabel1;
             System.Windows.Forms.Label patientIDLabel;
             System.Windows.Forms.Label patientEventDateLabel;
             this.submitButton = new System.Windows.Forms.Button();
@@ -39,53 +39,18 @@
             this.patientRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientRecordsTableAdapter = new HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.PatientRecordsTableAdapter();
             this.tableAdapterManager = new HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.TableAdapterManager();
-            this.patientEventIDTextBox = new System.Windows.Forms.TextBox();
+            this.patientIDlabelStrip = new System.Windows.Forms.Label();
+            this.patientEventIDLabel2 = new System.Windows.Forms.Label();
             this.patientEventTextBox = new System.Windows.Forms.TextBox();
+            this.patientIDLabel1 = new System.Windows.Forms.Label();
             this.patientEventDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.patientIDContent = new System.Windows.Forms.Label();
-            patientEventIDLabel = new System.Windows.Forms.Label();
-            patientEventLabel = new System.Windows.Forms.Label();
+            patientEventIDLabel1 = new System.Windows.Forms.Label();
+            patientEventLabel1 = new System.Windows.Forms.Label();
             patientIDLabel = new System.Windows.Forms.Label();
             patientEventDateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._HealthyPeopleDB_TestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientRecordsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // patientEventIDLabel
-            // 
-            patientEventIDLabel.AutoSize = true;
-            patientEventIDLabel.Location = new System.Drawing.Point(26, 19);
-            patientEventIDLabel.Name = "patientEventIDLabel";
-            patientEventIDLabel.Size = new System.Drawing.Size(88, 13);
-            patientEventIDLabel.TabIndex = 10;
-            patientEventIDLabel.Text = "Patient Event ID:";
-            // 
-            // patientEventLabel
-            // 
-            patientEventLabel.AutoSize = true;
-            patientEventLabel.Location = new System.Drawing.Point(26, 45);
-            patientEventLabel.Name = "patientEventLabel";
-            patientEventLabel.Size = new System.Drawing.Size(74, 13);
-            patientEventLabel.TabIndex = 12;
-            patientEventLabel.Text = "Patient Event:";
-            // 
-            // patientIDLabel
-            // 
-            patientIDLabel.AutoSize = true;
-            patientIDLabel.Location = new System.Drawing.Point(26, 71);
-            patientIDLabel.Name = "patientIDLabel";
-            patientIDLabel.Size = new System.Drawing.Size(57, 13);
-            patientIDLabel.TabIndex = 14;
-            patientIDLabel.Text = "Patient ID:";
-            // 
-            // patientEventDateLabel
-            // 
-            patientEventDateLabel.AutoSize = true;
-            patientEventDateLabel.Location = new System.Drawing.Point(26, 98);
-            patientEventDateLabel.Name = "patientEventDateLabel";
-            patientEventDateLabel.Size = new System.Drawing.Size(100, 13);
-            patientEventDateLabel.TabIndex = 16;
-            patientEventDateLabel.Text = "Patient Event Date:";
             // 
             // submitButton
             // 
@@ -133,41 +98,83 @@
             this.tableAdapterManager.UpdateOrder = HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableTableAdapter = null;
             // 
-            // patientEventIDTextBox
+            // patientIDlabelStrip
             // 
-            this.patientEventIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientRecordsBindingSource, "PatientEventID", true));
-            this.patientEventIDTextBox.Location = new System.Drawing.Point(132, 16);
-            this.patientEventIDTextBox.Name = "patientEventIDTextBox";
-            this.patientEventIDTextBox.Size = new System.Drawing.Size(200, 20);
-            this.patientEventIDTextBox.TabIndex = 11;
-            this.patientEventIDTextBox.TextChanged += new System.EventHandler(this.PatientEventIDTextBox_TextChanged);
+            this.patientIDlabelStrip.AutoSize = true;
+            this.patientIDlabelStrip.Location = new System.Drawing.Point(132, 71);
+            this.patientIDlabelStrip.Name = "patientIDlabelStrip";
+            this.patientIDlabelStrip.Size = new System.Drawing.Size(0, 13);
+            this.patientIDlabelStrip.TabIndex = 20;
+            // 
+            // patientEventIDLabel1
+            // 
+            patientEventIDLabel1.AutoSize = true;
+            patientEventIDLabel1.Location = new System.Drawing.Point(35, 19);
+            patientEventIDLabel1.Name = "patientEventIDLabel1";
+            patientEventIDLabel1.Size = new System.Drawing.Size(88, 13);
+            patientEventIDLabel1.TabIndex = 20;
+            patientEventIDLabel1.Text = "Patient Event ID:";
+            // 
+            // patientEventIDLabel2
+            // 
+            this.patientEventIDLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientRecordsBindingSource, "PatientEventID", true));
+            this.patientEventIDLabel2.Location = new System.Drawing.Point(132, 19);
+            this.patientEventIDLabel2.Name = "patientEventIDLabel2";
+            this.patientEventIDLabel2.Size = new System.Drawing.Size(100, 23);
+            this.patientEventIDLabel2.TabIndex = 21;
+            this.patientEventIDLabel2.Text = "label1";
+            // 
+            // patientEventLabel1
+            // 
+            patientEventLabel1.AutoSize = true;
+            patientEventLabel1.Location = new System.Drawing.Point(49, 41);
+            patientEventLabel1.Name = "patientEventLabel1";
+            patientEventLabel1.Size = new System.Drawing.Size(74, 13);
+            patientEventLabel1.TabIndex = 21;
+            patientEventLabel1.Text = "Patient Event:";
             // 
             // patientEventTextBox
             // 
             this.patientEventTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientRecordsBindingSource, "PatientEvent", true));
-            this.patientEventTextBox.Location = new System.Drawing.Point(132, 42);
+            this.patientEventTextBox.Location = new System.Drawing.Point(132, 38);
             this.patientEventTextBox.Name = "patientEventTextBox";
-            this.patientEventTextBox.Size = new System.Drawing.Size(200, 20);
-            this.patientEventTextBox.TabIndex = 13;
+            this.patientEventTextBox.Size = new System.Drawing.Size(100, 20);
+            this.patientEventTextBox.TabIndex = 22;
+            // 
+            // patientIDLabel
+            // 
+            patientIDLabel.AutoSize = true;
+            patientIDLabel.Location = new System.Drawing.Point(66, 71);
+            patientIDLabel.Name = "patientIDLabel";
+            patientIDLabel.Size = new System.Drawing.Size(57, 13);
+            patientIDLabel.TabIndex = 22;
+            patientIDLabel.Text = "Patient ID:";
+            // 
+            // patientIDLabel1
+            // 
+            this.patientIDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientRecordsBindingSource, "PatientID", true));
+            this.patientIDLabel1.Location = new System.Drawing.Point(129, 71);
+            this.patientIDLabel1.Name = "patientIDLabel1";
+            this.patientIDLabel1.Size = new System.Drawing.Size(100, 23);
+            this.patientIDLabel1.TabIndex = 23;
+            this.patientIDLabel1.Text = "label1";
+            // 
+            // patientEventDateLabel
+            // 
+            patientEventDateLabel.AutoSize = true;
+            patientEventDateLabel.Location = new System.Drawing.Point(23, 102);
+            patientEventDateLabel.Name = "patientEventDateLabel";
+            patientEventDateLabel.Size = new System.Drawing.Size(100, 13);
+            patientEventDateLabel.TabIndex = 23;
+            patientEventDateLabel.Text = "Patient Event Date:";
             // 
             // patientEventDateDateTimePicker
             // 
             this.patientEventDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.patientRecordsBindingSource, "PatientEventDate", true));
-            this.patientEventDateDateTimePicker.Location = new System.Drawing.Point(132, 94);
+            this.patientEventDateDateTimePicker.Location = new System.Drawing.Point(129, 98);
             this.patientEventDateDateTimePicker.Name = "patientEventDateDateTimePicker";
             this.patientEventDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.patientEventDateDateTimePicker.TabIndex = 17;
-            // 
-            // patientIDContent
-            // 
-            this.patientIDContent.AutoSize = true;
-            this.patientIDContent.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.patientRecordsBindingSource, "PatientID", true));
-            this.patientIDContent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientRecordsBindingSource, "PatientID", true));
-            this.patientIDContent.Location = new System.Drawing.Point(132, 70);
-            this.patientIDContent.Name = "patientIDContent";
-            this.patientIDContent.Size = new System.Drawing.Size(35, 13);
-            this.patientIDContent.TabIndex = 18;
-            this.patientIDContent.Text = "label1";
+            this.patientEventDateDateTimePicker.TabIndex = 24;
             // 
             // addPatientEventForm
             // 
@@ -175,15 +182,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(390, 222);
-            this.Controls.Add(this.patientIDContent);
-            this.Controls.Add(patientEventIDLabel);
-            this.Controls.Add(this.patientEventIDTextBox);
-            this.Controls.Add(patientEventLabel);
-            this.Controls.Add(this.patientEventTextBox);
-            this.Controls.Add(patientIDLabel);
+            this.ClientSize = new System.Drawing.Size(457, 222);
             this.Controls.Add(patientEventDateLabel);
             this.Controls.Add(this.patientEventDateDateTimePicker);
+            this.Controls.Add(patientIDLabel);
+            this.Controls.Add(this.patientIDLabel1);
+            this.Controls.Add(patientEventLabel1);
+            this.Controls.Add(this.patientEventTextBox);
+            this.Controls.Add(patientEventIDLabel1);
+            this.Controls.Add(this.patientEventIDLabel2);
+            this.Controls.Add(this.patientIDlabelStrip);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Name = "addPatientEventForm";
@@ -203,9 +211,10 @@
         private System.Windows.Forms.BindingSource patientRecordsBindingSource;
         private _HealthyPeopleDB_TestDataSetTableAdapters.PatientRecordsTableAdapter patientRecordsTableAdapter;
         private _HealthyPeopleDB_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox patientEventIDTextBox;
+        private System.Windows.Forms.Label patientIDlabelStrip;
+        private System.Windows.Forms.Label patientEventIDLabel2;
         private System.Windows.Forms.TextBox patientEventTextBox;
+        private System.Windows.Forms.Label patientIDLabel1;
         private System.Windows.Forms.DateTimePicker patientEventDateDateTimePicker;
-        private System.Windows.Forms.Label patientIDContent;
     }
 }
