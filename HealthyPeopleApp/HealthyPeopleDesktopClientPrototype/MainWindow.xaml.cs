@@ -26,23 +26,22 @@ namespace HealthyPeopleDesktopClientPrototype
     {
         private string conString = "HealthyPeopleDesktopClientPrototype.Properties.Settings.HealthyPeopleDB_TestConnectionString";
         protected int patientIDRec;
-        private string dbstring = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\HealthyPeopleDB-Test.accdb;Persist Security Info=True;";
             protected static List<String> patientInfo;// = new List<string>();
         public MainWindow()
         {
-            //LoginWindow loginWindow = new LoginWindow();
-            //loginWindow.ShowDialog();
-            //if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    InitializeComponent();
-            //    LoadGrid();
-            //    patientInfo = new List<string>();
-            //}
-            //else
-            //    System.Windows.Application.Current.Shutdown();
-            InitializeComponent();
-            LoadGrid();
-            
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
+            if (loginWindow.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                InitializeComponent();
+                LoadGrid();
+                patientInfo = new List<string>();
+            }
+            else
+                System.Windows.Application.Current.Shutdown();
+            // InitializeComponent();
+            // LoadGrid();
+
 
         }
 
