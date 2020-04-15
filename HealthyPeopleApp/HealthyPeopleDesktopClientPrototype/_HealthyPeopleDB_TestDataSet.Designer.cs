@@ -1439,6 +1439,8 @@ namespace HealthyPeopleDesktopClientPrototype {
             
             private global::System.Data.DataColumn columnPatientEventDate;
             
+            private global::System.Data.DataColumn columnPatientEventDescription;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PatientRecordsDataTable() {
@@ -1506,6 +1508,14 @@ namespace HealthyPeopleDesktopClientPrototype {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PatientEventDescriptionColumn {
+                get {
+                    return this.columnPatientEventDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1541,13 +1551,14 @@ namespace HealthyPeopleDesktopClientPrototype {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientRecordsRow AddPatientRecordsRow(string PatientEvent, PatientRow parentPatientRowByPatientPatientRecords, System.DateTime PatientEventDate) {
+            public PatientRecordsRow AddPatientRecordsRow(string PatientEvent, PatientRow parentPatientRowByPatientPatientRecords, System.DateTime PatientEventDate, string PatientEventDescription) {
                 PatientRecordsRow rowPatientRecordsRow = ((PatientRecordsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         PatientEvent,
                         null,
-                        PatientEventDate};
+                        PatientEventDate,
+                        PatientEventDescription};
                 if ((parentPatientRowByPatientPatientRecords != null)) {
                     columnValuesArray[2] = parentPatientRowByPatientPatientRecords[0];
                 }
@@ -1584,6 +1595,7 @@ namespace HealthyPeopleDesktopClientPrototype {
                 this.columnPatientEvent = base.Columns["PatientEvent"];
                 this.columnPatientID = base.Columns["PatientID"];
                 this.columnPatientEventDate = base.Columns["PatientEventDate"];
+                this.columnPatientEventDescription = base.Columns["PatientEventDescription"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1597,6 +1609,8 @@ namespace HealthyPeopleDesktopClientPrototype {
                 base.Columns.Add(this.columnPatientID);
                 this.columnPatientEventDate = new global::System.Data.DataColumn("PatientEventDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPatientEventDate);
+                this.columnPatientEventDescription = new global::System.Data.DataColumn("PatientEventDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPatientEventDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPatientEventID}, true));
                 this.columnPatientEventID.AutoIncrement = true;
@@ -1605,6 +1619,7 @@ namespace HealthyPeopleDesktopClientPrototype {
                 this.columnPatientEventID.AllowDBNull = false;
                 this.columnPatientEventID.Unique = true;
                 this.columnPatientEvent.MaxLength = 255;
+                this.columnPatientEventDescription.MaxLength = 536870910;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2923,6 +2938,23 @@ namespace HealthyPeopleDesktopClientPrototype {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PatientEventDescription {
+                get {
+                    try {
+                        return ((string)(this[this.tablePatientRecords.PatientEventDescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PatientEventDescription\' in table \'PatientRecords\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablePatientRecords.PatientEventDescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PatientRow PatientRow {
                 get {
                     return ((PatientRow)(this.GetParentRow(this.Table.ParentRelations["PatientPatientRecords"])));
@@ -2966,6 +2998,18 @@ namespace HealthyPeopleDesktopClientPrototype {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPatientEventDateNull() {
                 this[this.tablePatientRecords.PatientEventDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPatientEventDescriptionNull() {
+                return this.IsNull(this.tablePatientRecords.PatientEventDescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPatientEventDescriptionNull() {
+                this[this.tablePatientRecords.PatientEventDescriptionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4990,6 +5034,7 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
             tableMapping.ColumnMappings.Add("PatientEvent", "PatientEvent");
             tableMapping.ColumnMappings.Add("PatientID", "PatientID");
             tableMapping.ColumnMappings.Add("PatientEventDate", "PatientEventDate");
+            tableMapping.ColumnMappings.Add("PatientEventDescription", "PatientEventDescription");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5004,19 +5049,21 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PatientEventDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDate", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `PatientRecords` (`PatientEvent`, `PatientID`, `PatientEventDate`) VA" +
-                "LUES (?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `PatientRecords` (`PatientEvent`, `PatientID`, `PatientEventDate`, `P" +
+                "atientEventDescription`) VALUES (?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEvent", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEvent", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEventDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEventDescription", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDescription", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `PatientRecords` SET `PatientEvent` = ?, `PatientID` = ?, `PatientEventDate` = ? WHERE ((`PatientEventID` = ?) AND ((? = 1 AND `PatientEvent` IS NULL) OR (`PatientEvent` = ?)) AND ((? = 1 AND `PatientID` IS NULL) OR (`PatientID` = ?)) AND ((? = 1 AND `PatientEventDate` IS NULL) OR (`PatientEventDate` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `PatientRecords` SET `PatientEvent` = ?, `PatientID` = ?, `PatientEventDate` = ?, `PatientEventDescription` = ? WHERE ((`PatientEventID` = ?) AND ((? = 1 AND `PatientEvent` IS NULL) OR (`PatientEvent` = ?)) AND ((? = 1 AND `PatientID` IS NULL) OR (`PatientID` = ?)) AND ((? = 1 AND `PatientEventDate` IS NULL) OR (`PatientEventDate` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEvent", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEvent", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEventDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEventDescription", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDescription", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PatientEventID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PatientEvent", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEvent", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PatientEvent", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEvent", global::System.Data.DataRowVersion.Original, false, null));
@@ -5039,8 +5086,8 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PatientEventID, PatientEvent, PatientID, PatientEventDate FROM PatientReco" +
-                "rds";
+            this._commandCollection[0].CommandText = "SELECT PatientEventID, PatientEvent, PatientID, PatientEventDate, PatientEventDes" +
+                "cription FROM PatientRecords";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5155,7 +5202,7 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PatientEvent, global::System.Nullable<int> PatientID, global::System.Nullable<global::System.DateTime> PatientEventDate) {
+        public virtual int Insert(string PatientEvent, global::System.Nullable<int> PatientID, global::System.Nullable<global::System.DateTime> PatientEventDate, string PatientEventDescription) {
             if ((PatientEvent == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5173,6 +5220,12 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((PatientEventDescription == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PatientEventDescription));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5194,7 +5247,7 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PatientEvent, global::System.Nullable<int> PatientID, global::System.Nullable<global::System.DateTime> PatientEventDate, int Original_PatientEventID, string Original_PatientEvent, global::System.Nullable<int> Original_PatientID, global::System.Nullable<global::System.DateTime> Original_PatientEventDate) {
+        public virtual int Update(string PatientEvent, global::System.Nullable<int> PatientID, global::System.Nullable<global::System.DateTime> PatientEventDate, string PatientEventDescription, int Original_PatientEventID, string Original_PatientEvent, global::System.Nullable<int> Original_PatientID, global::System.Nullable<global::System.DateTime> Original_PatientEventDate) {
             if ((PatientEvent == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5213,30 +5266,36 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_PatientEventID));
-            if ((Original_PatientEvent == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((PatientEventDescription == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_PatientEvent));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PatientEventDescription));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_PatientEventID));
+            if ((Original_PatientEvent == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_PatientEvent));
             }
             if ((Original_PatientID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_PatientID.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_PatientID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_PatientEventDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PatientEventDate.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PatientEventDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

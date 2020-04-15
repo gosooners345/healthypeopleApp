@@ -148,12 +148,13 @@ namespace HealthyPeopleDesktopClientPrototype
             con.Close();
 
         }
-
+        //Adds new patient to system
         private void AddPatientButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 addPatientUserForm add = new addPatientUserForm();
+                add.typeTag = "Add";
                 add.ShowDialog();
                 if (add.DialogResult == System.Windows.Forms.DialogResult.OK)
                 {
@@ -171,17 +172,28 @@ namespace HealthyPeopleDesktopClientPrototype
                 System.Windows.MessageBox.Show(ex.Message);
             }
         }
-
-        private void AddEventButton_Click(object sender, RoutedEventArgs e)
+        
+        /// <summary>
+        /// Allows Patient information to be updated in system
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdatePatientButton_Click(object sender, RoutedEventArgs e)
         {
-            try
+            addPatientUserForm updatePatient = new addPatientUserForm();
+            int patientID = patientIDRec;
+          
+            updatePatient.patientID = patientID;
+            updatePatient.typeTag = "Update"; updatePatient.ShowDialog();
+            if (updatePatient.DialogResult == System.Windows.Forms.DialogResult.OK)
             {
-               
+                LoadGrid(patientID);
             }
-            catch
+            else
             {
+                updatePatient.Dispose();
+            }
 
-            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -197,6 +209,7 @@ namespace HealthyPeopleDesktopClientPrototype
            
         }
 
+        //Add new health event to patient records
         private void AddEvent_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -215,6 +228,11 @@ namespace HealthyPeopleDesktopClientPrototype
             {
                 System.Windows.MessageBox.Show(ex.Source,ex.Message);
             }
+        }
+
+        private void UpdatePatientButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

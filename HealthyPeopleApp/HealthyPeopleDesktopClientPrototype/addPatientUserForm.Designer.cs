@@ -43,7 +43,6 @@
             System.Windows.Forms.Label patientBirthDateLabel;
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.patientTableAdapter1 = new HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.PatientTableAdapter();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager1 = new HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableAdapters.TableAdapterManager();
@@ -63,6 +62,8 @@
             this.doctorsTextBox = new System.Windows.Forms.TextBox();
             this.patientPhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.patientBirthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.newUserRadio = new System.Windows.Forms.RadioButton();
+            this.existingPatientRadio = new System.Windows.Forms.RadioButton();
             patientPasswordLabel = new System.Windows.Forms.Label();
             patientIDLabel = new System.Windows.Forms.Label();
             patientNameLabel = new System.Windows.Forms.Label();
@@ -84,7 +85,7 @@
             // patientPasswordLabel
             // 
             patientPasswordLabel.AutoSize = true;
-            patientPasswordLabel.Location = new System.Drawing.Point(40, 82);
+            patientPasswordLabel.Location = new System.Drawing.Point(42, 121);
             patientPasswordLabel.Name = "patientPasswordLabel";
             patientPasswordLabel.Size = new System.Drawing.Size(92, 13);
             patientPasswordLabel.TabIndex = 24;
@@ -94,7 +95,7 @@
             // patientIDLabel
             // 
             patientIDLabel.AutoSize = true;
-            patientIDLabel.Location = new System.Drawing.Point(39, 112);
+            patientIDLabel.Location = new System.Drawing.Point(41, 151);
             patientIDLabel.Name = "patientIDLabel";
             patientIDLabel.Size = new System.Drawing.Size(57, 13);
             patientIDLabel.TabIndex = 25;
@@ -103,7 +104,7 @@
             // patientNameLabel
             // 
             patientNameLabel.AutoSize = true;
-            patientNameLabel.Location = new System.Drawing.Point(39, 138);
+            patientNameLabel.Location = new System.Drawing.Point(41, 177);
             patientNameLabel.Name = "patientNameLabel";
             patientNameLabel.Size = new System.Drawing.Size(74, 13);
             patientNameLabel.TabIndex = 27;
@@ -112,7 +113,7 @@
             // emailAddressLabel
             // 
             emailAddressLabel.AutoSize = true;
-            emailAddressLabel.Location = new System.Drawing.Point(39, 164);
+            emailAddressLabel.Location = new System.Drawing.Point(41, 203);
             emailAddressLabel.Name = "emailAddressLabel";
             emailAddressLabel.Size = new System.Drawing.Size(76, 13);
             emailAddressLabel.TabIndex = 29;
@@ -121,7 +122,7 @@
             // patientUserIDLabel1
             // 
             patientUserIDLabel1.AutoSize = true;
-            patientUserIDLabel1.Location = new System.Drawing.Point(39, 49);
+            patientUserIDLabel1.Location = new System.Drawing.Point(41, 88);
             patientUserIDLabel1.Name = "patientUserIDLabel1";
             patientUserIDLabel1.Size = new System.Drawing.Size(82, 13);
             patientUserIDLabel1.TabIndex = 31;
@@ -130,7 +131,7 @@
             // patientAddressLabel
             // 
             patientAddressLabel.AutoSize = true;
-            patientAddressLabel.Location = new System.Drawing.Point(39, 216);
+            patientAddressLabel.Location = new System.Drawing.Point(41, 255);
             patientAddressLabel.Name = "patientAddressLabel";
             patientAddressLabel.Size = new System.Drawing.Size(84, 13);
             patientAddressLabel.TabIndex = 33;
@@ -139,7 +140,7 @@
             // patientCityLabel
             // 
             patientCityLabel.AutoSize = true;
-            patientCityLabel.Location = new System.Drawing.Point(39, 242);
+            patientCityLabel.Location = new System.Drawing.Point(41, 281);
             patientCityLabel.Name = "patientCityLabel";
             patientCityLabel.Size = new System.Drawing.Size(63, 13);
             patientCityLabel.TabIndex = 35;
@@ -148,7 +149,7 @@
             // patientStateLabel
             // 
             patientStateLabel.AutoSize = true;
-            patientStateLabel.Location = new System.Drawing.Point(39, 268);
+            patientStateLabel.Location = new System.Drawing.Point(41, 307);
             patientStateLabel.Name = "patientStateLabel";
             patientStateLabel.Size = new System.Drawing.Size(71, 13);
             patientStateLabel.TabIndex = 37;
@@ -157,7 +158,7 @@
             // patientZipLabel
             // 
             patientZipLabel.AutoSize = true;
-            patientZipLabel.Location = new System.Drawing.Point(39, 294);
+            patientZipLabel.Location = new System.Drawing.Point(41, 333);
             patientZipLabel.Name = "patientZipLabel";
             patientZipLabel.Size = new System.Drawing.Size(61, 13);
             patientZipLabel.TabIndex = 39;
@@ -166,7 +167,7 @@
             // doctorsLabel
             // 
             doctorsLabel.AutoSize = true;
-            doctorsLabel.Location = new System.Drawing.Point(39, 320);
+            doctorsLabel.Location = new System.Drawing.Point(41, 359);
             doctorsLabel.Name = "doctorsLabel";
             doctorsLabel.Size = new System.Drawing.Size(47, 13);
             doctorsLabel.TabIndex = 41;
@@ -175,7 +176,7 @@
             // patientPhoneNumberLabel
             // 
             patientPhoneNumberLabel.AutoSize = true;
-            patientPhoneNumberLabel.Location = new System.Drawing.Point(39, 346);
+            patientPhoneNumberLabel.Location = new System.Drawing.Point(41, 385);
             patientPhoneNumberLabel.Name = "patientPhoneNumberLabel";
             patientPhoneNumberLabel.Size = new System.Drawing.Size(117, 13);
             patientPhoneNumberLabel.TabIndex = 43;
@@ -184,7 +185,7 @@
             // patientBirthDateLabel
             // 
             patientBirthDateLabel.AutoSize = true;
-            patientBirthDateLabel.Location = new System.Drawing.Point(39, 373);
+            patientBirthDateLabel.Location = new System.Drawing.Point(41, 412);
             patientBirthDateLabel.Name = "patientBirthDateLabel";
             patientBirthDateLabel.Size = new System.Drawing.Size(93, 13);
             patientBirthDateLabel.TabIndex = 45;
@@ -192,7 +193,7 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(57, 430);
+            this.submitButton.Location = new System.Drawing.Point(59, 469);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 0;
@@ -203,22 +204,12 @@
             // cancelButton
             // 
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(287, 430);
+            this.cancelButton.Location = new System.Drawing.Point(289, 469);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(170, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "New Patient Form";
-            this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
             // patientTableAdapter1
             // 
@@ -252,7 +243,7 @@
             // patientPasswordTextBox
             // 
             this.patientPasswordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientUserTableBindingSource, "PatientPassword", true));
-            this.patientPasswordTextBox.Location = new System.Drawing.Point(161, 79);
+            this.patientPasswordTextBox.Location = new System.Drawing.Point(163, 118);
             this.patientPasswordTextBox.Name = "patientPasswordTextBox";
             this.patientPasswordTextBox.PasswordChar = '*';
             this.patientPasswordTextBox.Size = new System.Drawing.Size(100, 20);
@@ -266,7 +257,7 @@
             // patientIDTextBox
             // 
             this.patientIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientID", true));
-            this.patientIDTextBox.Location = new System.Drawing.Point(162, 109);
+            this.patientIDTextBox.Location = new System.Drawing.Point(164, 148);
             this.patientIDTextBox.Name = "patientIDTextBox";
             this.patientIDTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientIDTextBox.TabIndex = 26;
@@ -274,7 +265,7 @@
             // patientNameTextBox
             // 
             this.patientNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientName", true));
-            this.patientNameTextBox.Location = new System.Drawing.Point(162, 135);
+            this.patientNameTextBox.Location = new System.Drawing.Point(164, 174);
             this.patientNameTextBox.Name = "patientNameTextBox";
             this.patientNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientNameTextBox.TabIndex = 28;
@@ -282,7 +273,7 @@
             // emailAddressTextBox
             // 
             this.emailAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "EmailAddress", true));
-            this.emailAddressTextBox.Location = new System.Drawing.Point(162, 161);
+            this.emailAddressTextBox.Location = new System.Drawing.Point(164, 200);
             this.emailAddressTextBox.Name = "emailAddressTextBox";
             this.emailAddressTextBox.Size = new System.Drawing.Size(200, 20);
             this.emailAddressTextBox.TabIndex = 30;
@@ -290,7 +281,7 @@
             // patientUserIDTextBox1
             // 
             this.patientUserIDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientUserID", true));
-            this.patientUserIDTextBox1.Location = new System.Drawing.Point(161, 49);
+            this.patientUserIDTextBox1.Location = new System.Drawing.Point(163, 88);
             this.patientUserIDTextBox1.Name = "patientUserIDTextBox1";
             this.patientUserIDTextBox1.Size = new System.Drawing.Size(200, 20);
             this.patientUserIDTextBox1.TabIndex = 32;
@@ -298,7 +289,7 @@
             // patientAddressTextBox
             // 
             this.patientAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientAddress", true));
-            this.patientAddressTextBox.Location = new System.Drawing.Point(162, 213);
+            this.patientAddressTextBox.Location = new System.Drawing.Point(164, 252);
             this.patientAddressTextBox.Name = "patientAddressTextBox";
             this.patientAddressTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientAddressTextBox.TabIndex = 34;
@@ -306,7 +297,7 @@
             // patientCityTextBox
             // 
             this.patientCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientCity", true));
-            this.patientCityTextBox.Location = new System.Drawing.Point(162, 239);
+            this.patientCityTextBox.Location = new System.Drawing.Point(164, 278);
             this.patientCityTextBox.Name = "patientCityTextBox";
             this.patientCityTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientCityTextBox.TabIndex = 36;
@@ -314,7 +305,7 @@
             // patientStateTextBox
             // 
             this.patientStateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientState", true));
-            this.patientStateTextBox.Location = new System.Drawing.Point(162, 265);
+            this.patientStateTextBox.Location = new System.Drawing.Point(164, 304);
             this.patientStateTextBox.Name = "patientStateTextBox";
             this.patientStateTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientStateTextBox.TabIndex = 38;
@@ -322,7 +313,7 @@
             // patientZipTextBox
             // 
             this.patientZipTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientZip", true));
-            this.patientZipTextBox.Location = new System.Drawing.Point(162, 291);
+            this.patientZipTextBox.Location = new System.Drawing.Point(164, 330);
             this.patientZipTextBox.Name = "patientZipTextBox";
             this.patientZipTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientZipTextBox.TabIndex = 40;
@@ -330,7 +321,7 @@
             // doctorsTextBox
             // 
             this.doctorsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "Doctors", true));
-            this.doctorsTextBox.Location = new System.Drawing.Point(162, 317);
+            this.doctorsTextBox.Location = new System.Drawing.Point(164, 356);
             this.doctorsTextBox.Name = "doctorsTextBox";
             this.doctorsTextBox.Size = new System.Drawing.Size(200, 20);
             this.doctorsTextBox.TabIndex = 42;
@@ -338,7 +329,7 @@
             // patientPhoneNumberTextBox
             // 
             this.patientPhoneNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "PatientPhoneNumber", true));
-            this.patientPhoneNumberTextBox.Location = new System.Drawing.Point(162, 343);
+            this.patientPhoneNumberTextBox.Location = new System.Drawing.Point(164, 382);
             this.patientPhoneNumberTextBox.Name = "patientPhoneNumberTextBox";
             this.patientPhoneNumberTextBox.Size = new System.Drawing.Size(200, 20);
             this.patientPhoneNumberTextBox.TabIndex = 44;
@@ -346,10 +337,32 @@
             // patientBirthDateDateTimePicker
             // 
             this.patientBirthDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.patientBindingSource1, "PatientBirthDate", true));
-            this.patientBirthDateDateTimePicker.Location = new System.Drawing.Point(162, 369);
+            this.patientBirthDateDateTimePicker.Location = new System.Drawing.Point(164, 408);
             this.patientBirthDateDateTimePicker.Name = "patientBirthDateDateTimePicker";
             this.patientBirthDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.patientBirthDateDateTimePicker.TabIndex = 46;
+            // 
+            // newUserRadio
+            // 
+            this.newUserRadio.AutoSize = true;
+            this.newUserRadio.Location = new System.Drawing.Point(73, 37);
+            this.newUserRadio.Name = "newUserRadio";
+            this.newUserRadio.Size = new System.Drawing.Size(83, 17);
+            this.newUserRadio.TabIndex = 47;
+            this.newUserRadio.TabStop = true;
+            this.newUserRadio.Text = "New Patient";
+            this.newUserRadio.UseVisualStyleBackColor = true;
+            // 
+            // existingPatientRadio
+            // 
+            this.existingPatientRadio.AutoSize = true;
+            this.existingPatientRadio.Location = new System.Drawing.Point(268, 37);
+            this.existingPatientRadio.Name = "existingPatientRadio";
+            this.existingPatientRadio.Size = new System.Drawing.Size(97, 17);
+            this.existingPatientRadio.TabIndex = 48;
+            this.existingPatientRadio.TabStop = true;
+            this.existingPatientRadio.Text = "Existing Patient";
+            this.existingPatientRadio.UseVisualStyleBackColor = true;
             // 
             // addPatientUserForm
             // 
@@ -357,7 +370,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(457, 499);
+            this.ClientSize = new System.Drawing.Size(457, 534);
+            this.Controls.Add(this.existingPatientRadio);
+            this.Controls.Add(this.newUserRadio);
             this.Controls.Add(patientIDLabel);
             this.Controls.Add(this.patientIDTextBox);
             this.Controls.Add(patientNameLabel);
@@ -382,7 +397,6 @@
             this.Controls.Add(this.patientBirthDateDateTimePicker);
             this.Controls.Add(patientPasswordLabel);
             this.Controls.Add(this.patientPasswordTextBox);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Name = "addPatientUserForm";
@@ -405,7 +419,6 @@
         private System.Windows.Forms.BindingSource patientBindingSource;
         private _HealthyPeopleDB_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private _HealthyPeopleDB_TestDataSetTableAdapters.PatientUserTableTableAdapter patientUserTableTableAdapter1;
-        private System.Windows.Forms.Label label8;
         private _HealthyPeopleDB_TestDataSet _HealthyPeopleDB_TestDataSet;
         private System.Windows.Forms.BindingSource patientUserTableBindingSource;
         private System.Windows.Forms.TextBox patientPasswordTextBox;
@@ -421,5 +434,7 @@
         private System.Windows.Forms.TextBox doctorsTextBox;
         private System.Windows.Forms.TextBox patientPhoneNumberTextBox;
         private System.Windows.Forms.DateTimePicker patientBirthDateDateTimePicker;
+        private System.Windows.Forms.RadioButton newUserRadio;
+        private System.Windows.Forms.RadioButton existingPatientRadio;
     }
 }

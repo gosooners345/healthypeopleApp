@@ -24,12 +24,14 @@ namespace HealthyPeopleDesktopClientPrototype
         /// <param name="e"></param>
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            //Add Patient Health events to record
             _HealthyPeopleDB_TestDataSet.PatientRecordsRow patientRecords;
             patientRecords = this._HealthyPeopleDB_TestDataSet.PatientRecords.NewPatientRecordsRow();
             
             patientRecords.PatientID = Int32.Parse(patientIDLabel1.Text);
             patientRecords.PatientEvent = patientEventTextBox.Text;
             patientRecords.PatientEventDate = patientEventDateDateTimePicker.Value.Date;
+            patientRecords.PatientEventDescription = eventDescRTB.Text;
             //Save an event to a patient's health record
             try {
 
