@@ -73,6 +73,7 @@
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="healthRecGrid" HorizontalAlignment="Left" Height="297" VerticalAlignment="Top" Width="472"/>
                     <Button x:Name="addEvent" Content="Add Health Event" HorizontalAlignment="Left" Margin="512,28,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.533,0" Click="AddEvent_Click"/>
+                    <Button x:Name="updateHealthEventButton" Content="Update Health Event" HorizontalAlignment="Left" Margin="512,68,0,0" VerticalAlignment="Top" Width="125" Click="UpdateHealthEventButton_Click"/>
                 </Grid>
             </TabItem>
             <Label Content="Label" Height="100" Width="100"/>

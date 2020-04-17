@@ -229,10 +229,7 @@ namespace HealthyPeopleDesktopClientPrototype
             }
         }
 
-        private void UpdatePatientButton_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 
 }
