@@ -9,9 +9,9 @@
     <Shape ID="DesignTable:EmployeeDetails" ZOrder="10" X="70" Y="70" Height="248" Width="241" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:Jobs" ZOrder="9" X="381" Y="70" Height="134" Width="170" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:UserTable" ZOrder="8" X="-27" Y="335" Height="115" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:PatientRecords" ZOrder="5" X="837" Y="172" Height="191" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:PatientUserTable" ZOrder="4" X="187" Y="445" Height="134" Width="281" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Patient" ZOrder="3" X="637" Y="391" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:PatientRecords" ZOrder="1" X="837" Y="172" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:PatientUserTable" ZOrder="5" X="187" Y="445" Height="134" Width="281" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Patient" ZOrder="4" X="637" Y="391" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:JobsEmployeeDetails" ZOrder="7" LineWidth="11">
@@ -38,7 +38,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:PatientPatientRecords" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:PatientPatientRecords" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>778</X>
@@ -54,7 +54,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:PatientUserTablePatient" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:PatientUserTablePatient" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>468</X>

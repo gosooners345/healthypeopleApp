@@ -5083,20 +5083,27 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PatientEventID, PatientEvent, PatientID, PatientEventDate, PatientEventDes" +
-                "cription FROM PatientRecords";
+                "cription FROM PatientRecords ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO `PatientRecords` (`PatientEvent`, `PatientID`, `PatientEventDate`) VA" +
-                "LUES (?, ?, ?)";
+            this._commandCollection[1].CommandText = "SELECT PatientRecords.PatientEventID, PatientRecords.PatientEvent, PatientRecords" +
+                ".PatientID, PatientRecords.PatientEventDate, PatientRecords.PatientEventDescript" +
+                "ion FROM PatientRecords WHERE PatientRecords.PatientID = ?";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEvent", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEvent", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientID", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEventDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO `PatientRecords` (`PatientEvent`, `PatientID`, `PatientEventDate`) VA" +
+                "LUES (?, ?, ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEvent", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEvent", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientID", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PatientEventDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PatientEventDate", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5118,6 +5125,42 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual _HealthyPeopleDB_TestDataSet.PatientRecordsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            _HealthyPeopleDB_TestDataSet.PatientRecordsDataTable dataTable = new _HealthyPeopleDB_TestDataSet.PatientRecordsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatientID(_HealthyPeopleDB_TestDataSet.PatientRecordsDataTable dataTable, global::System.Nullable<int> PatientID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PatientID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(PatientID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _HealthyPeopleDB_TestDataSet.PatientRecordsDataTable GetDataByPatientID(global::System.Nullable<int> PatientID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PatientID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(PatientID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             _HealthyPeopleDB_TestDataSet.PatientRecordsDataTable dataTable = new _HealthyPeopleDB_TestDataSet.PatientRecordsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5318,7 +5361,7 @@ namespace HealthyPeopleDesktopClientPrototype._HealthyPeopleDB_TestDataSetTableA
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string PatientEvent, global::System.Nullable<int> PatientID, global::System.Nullable<global::System.DateTime> PatientEventDate) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
             if ((PatientEvent == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }

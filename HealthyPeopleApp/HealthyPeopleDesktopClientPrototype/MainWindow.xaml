@@ -10,15 +10,16 @@
         <local:_HealthyPeopleDB_TestDataSet x:Key="_HealthyPeopleDB_TestDataSet"/>
         <CollectionViewSource x:Key="employeeDetailsViewSource" Source="{Binding EmployeeDetails, Source={StaticResource _HealthyPeopleDB_TestDataSet}}"/>
         <CollectionViewSource x:Key="patientViewSource" Source="{Binding Patient, Source={StaticResource _HealthyPeopleDB_TestDataSet}}"/>
+        <CollectionViewSource x:Key="patientRecordsViewSource" Source="{Binding PatientRecords, Source={StaticResource _HealthyPeopleDB_TestDataSet}}"/>
     </Window.Resources>
 
-    <Grid>
+    <Grid DataContext="{StaticResource patientRecordsViewSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160*"/>
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="171*"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="345" Margin="0,40,0,0" VerticalAlignment="Top" Width="792" RenderTransformOrigin="-0.15,0.45" Grid.ColumnSpan="3">
+        <TabControl HorizontalAlignment="Left" Height="345" Margin="0,40,0,0" VerticalAlignment="Top" Width="792" RenderTransformOrigin="-0.15,0.45" Grid.ColumnSpan="3" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="Patient Data">
                 <Grid Background="#FFE5E5E5" DataContext="{StaticResource employeeDetailsViewSource}">
                     <Grid.ColumnDefinitions>
@@ -71,12 +72,51 @@
             </TabItem>
             <TabItem Header="Patient Health Records" Height="22" VerticalAlignment="Top" Margin="-2,0">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="healthRecGrid" HorizontalAlignment="Left" Height="297" VerticalAlignment="Top" Width="472"/>
-                    <Button x:Name="addEvent" Content="Add Health Event" HorizontalAlignment="Left" Margin="512,28,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.533,0" Click="AddEvent_Click"/>
-                    <Button x:Name="updateHealthEventButton" Content="Update Health Event" HorizontalAlignment="Left" Margin="512,68,0,0" VerticalAlignment="Top" Width="125" Click="UpdateHealthEventButton_Click"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="152*"/>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="529*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="addEvent" Content="Add Health Event" HorizontalAlignment="Left" Margin="255,28,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.533,0" Click="AddEvent_Click" Grid.Column="3"/>
+                    <Button x:Name="updateHealthEventButton" Content="Update Health Event" HorizontalAlignment="Left" Margin="255,68,0,0" VerticalAlignment="Top" Width="125" Click="UpdateEvent_Click" Grid.Column="3"/>
+                    <DataGrid x:Name="healthRecGrid" AutoGenerateColumns="False" Grid.ColumnSpan="4" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,294,115" RowDetailsVisibilityMode="VisibleWhenSelected">
+                        <DataGrid.ItemContainerStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding PatientID}" Value="VALUE">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.ItemContainerStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="patientEventIDColumn" Binding="{Binding PatientEventID}" Header="Patient Event ID" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="patientIDColumn" Binding="{Binding PatientID}" Header="Patient ID" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="patientEventColumn" Binding="{Binding PatientEvent}" Header="Patient Event" Width="SizeToHeader"/>
+
+                            <DataGridTextColumn x:Name="patientEventDateColumn" Binding="{Binding PatientEventDate}" Header="Patient Event Date" Width="SizeToHeader">
+                                <!--<DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DatePicker SelectedDate="{Binding PatientEventDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>-->
+                            </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="patientEventDescriptionColumn" Binding="{Binding PatientEventDescription}" Header="Patient Event Description" Width="SizeToHeader"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="prevButton" Content="Previous" Grid.Column="3" HorizontalAlignment="Left" Margin="270,170,0,0" VerticalAlignment="Top" Width="75" Click="PrevButton_Click"/>
+                    <Button x:Name="nextButton" Content="Next" Grid.Column="3" HorizontalAlignment="Left" Margin="397,170,0,0" VerticalAlignment="Top" Width="75" Click="NextButton_Click"/>
                 </Grid>
             </TabItem>
-            <Label Content="Label" Height="100" Width="100"/>
+            
+
+            <Grid Background="#FFE5E5E5" Height="315" Width="786">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="104*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
         </TabControl>
         <StatusBar HorizontalAlignment="Left" Height="29" Margin="0,390,0,0" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="3"/>
         <Label x:Name="patient" Content="Patient Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.184,0.038" Height="35"/>

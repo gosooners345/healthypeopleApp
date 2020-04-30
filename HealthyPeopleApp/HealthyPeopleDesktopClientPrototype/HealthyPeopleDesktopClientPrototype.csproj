@@ -72,6 +72,9 @@
     <Compile Include="addPatientUserForm.Designer.cs">
       <DependentUpon>addPatientUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="_HealthyPeopleDB_TestDataSet.cs">
+      <DependentUpon>_HealthyPeopleDB_TestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_HealthyPeopleDB_TestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
